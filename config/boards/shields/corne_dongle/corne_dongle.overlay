@@ -16,6 +16,7 @@
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &foostan_corne_6col_layout;
         zephyr,display = &oled;
+        zephyr,console = &uart0;
     };
 
     mock_kscan: mock_kscan_0 {
