@@ -1,27 +1,6 @@
 /*
- * Custom matrix transform for corne right half.
+ * Right half matrix transform fix is in:
+ * config/boards/shields/corne/boards/nice_nano_v2.overlay
  *
- * The physical PCB routes thumb keys to row 3, columns 3-5 (local).
- * The standard corne_right shield applies col-offset=6, so local col 3
- * becomes global col 9 (RC(3,9)), which is not in the keymap transform.
- *
- * Fix: override with col-offset=0 and hardcode all global positions directly.
- * Local (3,3) -> RC(3,6), (3,4) -> RC(3,7), (3,5) -> RC(3,8).
- * Columns 0-2 in row 3 have no physical switches; they are mapped to
- * out-of-range positions that will never be triggered.
+ * That file is loaded after the shield DTS so &default_transform is defined.
  */
-
-#include <dt-bindings/zmk/matrix_transform.h>
-
-&default_transform {
-    col-offset = <0>;
-    columns = <6>;
-    rows = <4>;
-    map = <
-/* row 0 */ RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11)
-/* row 1 */ RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10) RC(1,11)
-/* row 2 */ RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11)
-/* row 3: cols 0-2 = no physical switch, cols 3-5 = right thumb keys */
-            RC(3,9)  RC(3,10) RC(3,11) RC(3,6)  RC(3,7)  RC(3,8)
-    >;
-};

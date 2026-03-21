@@ -1,0 +1,25 @@
+/*
+ * Board-specific overlay for corne right half on nice!nano v2.
+ *
+ * The physical PCB routes thumb keys to local row 3, columns 3-5.
+ * With the standard col-offset=6, local col 3 -> global col 9, which
+ * is not in the keymap transform. This override sets col-offset=0 and
+ * hardcodes all global positions so thumb keys land at RC(3,6..8).
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+#ifdef CONFIG_SHIELD_CORNE_RIGHT
+&default_transform {
+    col-offset = <0>;
+    columns = <6>;
+    rows = <4>;
+    map = <
+/* row 0 */ RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11)
+/* row 1 */ RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10) RC(1,11)
+/* row 2 */ RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11)
+/* row 3: cols 0-2 = no physical switch, cols 3-5 = right thumb keys */
+            RC(3,9)  RC(3,10) RC(3,11) RC(3,6)  RC(3,7)  RC(3,8)
+    >;
+};
+#endif
