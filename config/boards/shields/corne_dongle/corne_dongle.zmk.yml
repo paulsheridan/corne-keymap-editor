@@ -3,5 +3,3 @@ id: corne_dongle
 name: Corne Dongle
 type: shield
 exposes: [i2c_oled]
-features:
-  - display
