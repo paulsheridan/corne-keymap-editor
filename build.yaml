@@ -5,9 +5,9 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
-  # Dongle with USB logging snippet (dongle_display temporarily removed for diagnostics)
+  # Dongle with USB logging snippet
   - board: nice_nano_v2
-    shield: corne_dongle
+    shield: corne_dongle dongle_display
     snippet: zmk-usb-logging
   # Settings reset
   - board: nice_nano_v2
