@@ -3,12 +3,9 @@
  *
  * SPDX-License-Identifier: MIT
  *
- * Eyelash Corne 48-key layout.
- *
- * Row 0 (13): TAB Q W E R T | UP | Y U I O P BSPC
- * Row 1 (15): LCTRL A S D F G | LEFT ENTER RIGHT | H J K L ; '
- * Row 2 (14): LSHFT Z X C V B | SPC | DOWN | N M , . / ESC
- * Row 3  (6): LGUI MO(1) MO(2) | | RET SPC RALT
+ * Eyelash Corne 48-key layout (used by eyelash_corne_left and eyelash_corne_right).
+ * Halves don't process the keymap at runtime (central/dongle does), but
+ * the binding count must match the 48-key transform or the build will fail.
  */
 
 #include <behaviors.dtsi>

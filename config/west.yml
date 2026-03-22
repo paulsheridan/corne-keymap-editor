@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: a741725193
+      url-base: https://github.com/a741725193
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -13,5 +15,9 @@ manifest:
       remote: englmaxi
       revision: v0.3
       path: modules/zmk-dongle-display
+    - name: zmk-new_corne
+      remote: a741725193
+      revision: main
+      path: modules/eyelash_corne
   self:
     path: config

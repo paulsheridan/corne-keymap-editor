@@ -1,6 +1,0 @@
-/*
- * Right half matrix transform fix is in:
- * config/boards/shields/corne/boards/nice_nano_v2.overlay
- *
- * That file is loaded after the shield DTS so &default_transform is defined.
- */
